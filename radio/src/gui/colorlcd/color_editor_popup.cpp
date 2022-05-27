@@ -226,7 +226,7 @@ ColorEditorPopup::ColorEditorPopup(Window *window, std::function<uint32_t ()> ge
       _setValue(rgb);
   });
 
-  content->setFocus();
+  // content->setFocus();
   bringToTop();
   content->setTitle(STR_COLOR_PICKER);
   killAllEvents();

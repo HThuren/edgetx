@@ -56,8 +56,9 @@ SetupTopBarWidgetsPage::SetupTopBarWidgetsPage(ScreenMenu* menu):
   auto topbar = dynamic_cast<TopbarImpl*>(viewMain->getTopbar());
   for (unsigned i = 0; i < topbar->getZonesCount(); i++) {
     auto rect = topbar->getZone(i);
-    auto widget = new SetupWidgetsPageSlot(this, rect, topbar, i);
-    if (i == 0) widget->setFocus();
+    // auto widget =
+    new SetupWidgetsPageSlot(this, rect, topbar, i);
+    // if (i == 0) widget->setFocus();
   }
 #if defined(HARDWARE_TOUCH)
       new Button(
@@ -66,7 +67,8 @@ SetupTopBarWidgetsPage::SetupTopBarWidgetsPage(ScreenMenu* menu):
             this->deleteLater();
             return 1;
           },
-          NO_FOCUS | FORM_NO_BORDER);
+          NO_FOCUS | FORM_NO_BORDER,
+          0, window_create);
 #endif
 }
 

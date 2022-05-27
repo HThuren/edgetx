@@ -43,28 +43,28 @@ class PageHeader: public FormGroup
     }
 #endif
 
-    void onEvent(event_t event) override
-    {
-      if (event == EVT_KEY_BREAK(KEY_PGUP)) {
-        onKeyPress();
-        FormField *focus = dynamic_cast<FormField *>(getFocus());
-        if (focus != nullptr && focus->getPreviousField()) {
-          focus->getPreviousField()->setFocus(SET_FOCUS_BACKWARD, focus);
-        }
-      } else if (event == EVT_KEY_BREAK(KEY_PGDN)) {
-        onKeyPress();
-        FormField *focus = dynamic_cast<FormField *>(getFocus());
-        if (focus != nullptr && focus->getNextField()) {
-          focus->getNextField()->setFocus(SET_FOCUS_FORWARD, focus);
-        }
-      } else if (event == EVT_KEY_FIRST(KEY_EXIT)) {
-        killEvents(event);
-        parent->deleteLater();  // destroy the Page
-      } 
-      else {
-        FormGroup::onEvent(event);
-      }
-    }
+    // void onEvent(event_t event) override
+    // {
+    //   if (event == EVT_KEY_BREAK(KEY_PGUP)) {
+    //     onKeyPress();
+    //     FormField *focus = dynamic_cast<FormField *>(getFocus());
+    //     if (focus != nullptr && focus->getPreviousField()) {
+    //       focus->getPreviousField()->setFocus(SET_FOCUS_BACKWARD, focus);
+    //     }
+    //   } else if (event == EVT_KEY_BREAK(KEY_PGDN)) {
+    //     onKeyPress();
+    //     FormField *focus = dynamic_cast<FormField *>(getFocus());
+    //     if (focus != nullptr && focus->getNextField()) {
+    //       focus->getNextField()->setFocus(SET_FOCUS_FORWARD, focus);
+    //     }
+    //   } else if (event == EVT_KEY_FIRST(KEY_EXIT)) {
+    //     killEvents(event);
+    //     parent->deleteLater();  // destroy the Page
+    //   } 
+    //   else {
+    //     FormGroup::onEvent(event);
+    //   }
+    // }
 
     void paint(BitmapBuffer * dc) override;
 
@@ -94,9 +94,8 @@ class Page: public Window
     }
 #endif
 
-#if defined(HARDWARE_KEYS)
-    void onEvent(event_t event) override;
-#endif
+    // void onEvent(event_t event) override;
+    void onCancel() override;
 
 #if defined(HARDWARE_TOUCH)
     bool onTouchStart(coord_t x, coord_t y) override
@@ -113,8 +112,6 @@ class Page: public Window
       return true;
     }
 #endif
-
-    void setFocus(uint8_t flag = SET_FOCUS_DEFAULT, Window * from = nullptr) override;
 
     void paint(BitmapBuffer * dc) override;
 

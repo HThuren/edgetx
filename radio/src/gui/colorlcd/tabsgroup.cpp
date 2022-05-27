@@ -33,10 +33,13 @@
 
 #include <algorithm>
 
-TabCarouselButton::TabCarouselButton(Window* parent, const rect_t& rect, std::vector<PageTab *>& tabs, uint8_t index,
-           std::function<uint8_t(void)> pressHandler,
-           WindowFlags flags) :
-    Button(parent, rect, std::move(pressHandler), flags), tabs(tabs), index(index)
+TabCarouselButton::TabCarouselButton(Window* parent, const rect_t& rect,
+                                     std::vector<PageTab*>& tabs, uint8_t index,
+                                     std::function<uint8_t(void)> pressHandler,
+                                     WindowFlags flags) :
+    Button(parent, rect, std::move(pressHandler), flags, 0, window_create),
+    tabs(tabs),
+    index(index)
 {
 }
 
@@ -67,7 +70,8 @@ TabsGroupHeader::TabsGroupHeader(TabsGroup* parent, uint8_t icon) :
           parent->deleteLater();
           return 1;
         },
-        NO_FOCUS | FORM_NO_BORDER),
+        NO_FOCUS | FORM_NO_BORDER,
+        0, window_create),
 #endif
     icon(icon),
     carousel(this, parent)
@@ -206,7 +210,7 @@ void TabsGroup::removeAllTabs()
 void TabsGroup::setVisibleTab(PageTab* tab)
 {
   if (tab != currentTab) {
-    clearFocus();
+    // clearFocus();
     body.clear();
 #if defined(HARDWARE_TOUCH)
     Keyboard::hide();
@@ -220,9 +224,9 @@ void TabsGroup::setVisibleTab(PageTab* tab)
 #endif
 
     auto form = new FormWindow(&body, rect_t{0, 0, body.width(), body.height()},
-                               NO_FOCUS | FORM_FORWARD_FOCUS);
+                               NO_FOCUS /*| FORM_FORWARD_FOCUS*/);
     tab->build(form);
-    form->setFocus();
+    // form->setFocus();
 
     header.setTitle(tab->title.c_str());
     invalidate();
@@ -245,9 +249,9 @@ void TabsGroup::checkEvents()
   }
 }
 
-#if defined(HARDWARE_KEYS)
 void TabsGroup::onEvent(event_t event)
 {
+#if defined(HARDWARE_KEYS)
   TRACE_WINDOWS("%s received event 0x%X", getWindowDebugString().c_str(), event);
 
 #if defined(KEYS_GPIO_REG_PGUP)
@@ -267,15 +271,16 @@ void TabsGroup::onEvent(event_t event)
     killEvents(event);
     uint8_t current = header.carousel.getCurrentIndex();
     setCurrentTab(current == 0 ? tabs.size() - 1 : current - 1);
-  }
-  else if (event == EVT_KEY_FIRST(KEY_EXIT)) {
-    killEvents(event);
-    deleteLater();
   } else if (parent) {
     parent->onEvent(event);
   }
-}
 #endif
+}
+
+void TabsGroup::onCancel()
+{
+  deleteLater();
+}
 
 void TabsGroup::paint(BitmapBuffer * dc)
 {

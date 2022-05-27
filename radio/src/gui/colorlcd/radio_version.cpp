@@ -84,7 +84,7 @@ class VersionDialog: public Dialog
                                       this->deleteLater();
                                       return 0;
                                   });
-      exitButton->setFocus(SET_FOCUS_DEFAULT);
+      // exitButton->setFocus(SET_FOCUS_DEFAULT);
       grid.nextLine();
 
       grid.spacer(PAGE_PADDING);

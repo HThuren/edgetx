@@ -50,7 +50,7 @@ Page::Page(unsigned icon):
   body(this, { 0, MENU_HEADER_HEIGHT, LCD_W, LCD_H - MENU_HEADER_HEIGHT }, FORM_FORWARD_FOCUS)
 {
   Layer::push(this);
-  clearFocus();
+  // clearFocus();
 }
 
 void Page::deleteLater(bool detach, bool trash)
@@ -67,27 +67,32 @@ void Page::deleteLater(bool detach, bool trash)
   Window::deleteLater(detach, trash);
 }
 
-void Page::setFocus(uint8_t flag, Window * from)
-{
-  body.setFocus(flag, from);
-}
+// void Page::setFocus(uint8_t flag, Window * from)
+// {
+  // body.setFocus(flag, from);
+// }
 
 void Page::paint(BitmapBuffer * dc)
 {
   dc->clear(COLOR_THEME_SECONDARY3);
 }
 
-#if defined(HARDWARE_KEYS)
-void Page::onEvent(event_t event)
-{
-  TRACE_WINDOWS("%s received event 0x%X", getWindowDebugString().c_str(), event);
+// void Page::onEvent(event_t event)
+// {
+// #if defined(HARDWARE_KEYS)
+//   TRACE_WINDOWS("%s received event 0x%X", getWindowDebugString().c_str(), event);
 
-  if (event == EVT_KEY_LONG(KEY_EXIT) || event == EVT_KEY_BREAK(KEY_EXIT)) {
-    killEvents(event);
-    deleteLater();
-  }
+//   if (event == EVT_KEY_LONG(KEY_EXIT) || event == EVT_KEY_BREAK(KEY_EXIT)) {
+//     killEvents(event);
+//     onCancel();
+//   }
+// #endif
+// }
+
+void Page::onCancel()
+{
+  deleteLater();
 }
-#endif
 
 #if defined(HARDWARE_TOUCH)
 bool Page::onTouchEnd(coord_t x, coord_t y)

@@ -93,9 +93,9 @@ SetupWidgetsPage::SetupWidgetsPage(ScreenMenu* menu, uint8_t customScreenIdx) :
 
   for (unsigned i = 0; i < screen->getZonesCount(); i++) {
     auto rect = screen->getZone(i);
-    auto widget =
-        new SetupWidgetsPageSlot(this, rect, customScreens[customScreenIdx], i);
-    if (i == 0) widget->setFocus();
+    auto widget_container = customScreens[customScreenIdx];
+    auto widget = new SetupWidgetsPageSlot(this, rect, widget_container, i);
+    // if (i == 0) widget->setFocus();
   }
 
 #if defined(HARDWARE_TOUCH)
@@ -106,7 +106,8 @@ SetupWidgetsPage::SetupWidgetsPage(ScreenMenu* menu, uint8_t customScreenIdx) :
         this->deleteLater();
         return 1;
       },
-      NO_FOCUS | FORM_NO_BORDER);
+      NO_FOCUS | FORM_NO_BORDER,
+      0, window_create);
 #endif
 }
 

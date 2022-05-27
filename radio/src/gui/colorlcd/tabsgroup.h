@@ -216,10 +216,8 @@ class TabsGroup: public Window
     }
   
     void checkEvents() override;
-
-#if defined(HARDWARE_KEYS)
     void onEvent(event_t event) override;
-#endif
+    void onCancel() override;
 
     void paint(BitmapBuffer * dc) override;
 

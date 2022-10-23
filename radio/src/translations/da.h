@@ -241,7 +241,7 @@
 #endif
 
 #if defined(PCBNV14)
-#define  TR_RFPOWER_AFHDS2             "Standard","Høj"
+  #define  TR_RFPOWER_AFHDS2           "Standard","Høj"
 #endif
 
 #define TR_ROTARY_ENCODERS
@@ -289,11 +289,11 @@
 #define TR_TIMER_DIR                   TR("Rest", "Vis rest"), TR("Gået tid", "Vis gået tid")
 
 #if defined(COLORLCD)
-#if defined(BOLD)
-#define TR_FONT_SIZES                  "STD"
-#else
-#define TR_FONT_SIZES                  "STD","FED","XXS","XS","L","XL","XXL"
-#endif
+  #if defined(BOLD)
+    #define TR_FONT_SIZES              "STD"
+  #else
+    #define TR_FONT_SIZES              "STD","FED","XXS","XS","L","XL","XXL"
+  #endif
 #endif
 
 #if defined(PCBFRSKY)
@@ -346,9 +346,9 @@
 #define TR_BEEPCTR                     TR("Ctr Bip", "Center Bip")
 #define TR_USE_GLOBAL_FUNCS            TR("Glob.Funk.", "Brug global funk.")
 #define TR_PROTOCOL                    TR("Proto", "Protokol")
-  #define TR_PPMFRAME                  INDENT "PPM frame"
-  #define TR_REFRESHRATE               TR(INDENT "Genfrisk", INDENT "Genfrisk rate")
-  #define STR_WARN_BATTVOLTAGE         TR(INDENT "Udgang er VBAT: ", INDENT "Advarsel: udgang niveau er VBAT: ")
+#define TR_PPMFRAME                    INDENT "PPM frame"
+#define TR_REFRESHRATE                 TR(INDENT "Genfrisk", INDENT "Genfrisk rate")
+#define STR_WARN_BATTVOLTAGE           TR(INDENT "Udgang er VBAT: ", INDENT "Advarsel: udgang niveau er VBAT: ")
 #define TR_WARN_5VOLTS                 "Advarsel: udgang niveau er 5 volts"
 #define TR_MS                          "ms"
 #define TR_FREQUENCY                   INDENT "Frekvens"
@@ -444,8 +444,15 @@
 #define TR_KEYS_BACKLIGHT              "Taster klarhed"
 #define TR_BLCOLOR                     "Farve"
 #define TR_SPLASHSCREEN                "Start skærm"
-#define TR_PWR_ON_DELAY                "Strøm forsink TIL"
-#define TR_PWR_OFF_DELAY               "Strøm forsink FRA"
+
+#if LCD_W >= 212
+  #define TR_PWR_ON_DELAY              "Forsinkelse ved tænd af radio"
+  #define TR_PWR_OFF_DELAY             "Forsinkelse ved sluk af radio"
+#else
+  #define TR_PWR_ON_DELAY              "Forsink tænd"
+  #define TR_PWR_OFF_DELAY             "Forsink sluk"
+#endif
+
 #define TR_THROTTLE_WARNING            TR(INDENT "Gas adv", INDENT "Gas advarsel")
 #define TR_CUSTOM_THROTTLE_WARNING     TR(INDENT INDENT INDENT INDENT "Tilp-Pos", INDENT INDENT INDENT INDENT "Tilpasset position?")
 #define TR_CUSTOM_THROTTLE_WARNING_VAL TR("Pos. %", "Position %")

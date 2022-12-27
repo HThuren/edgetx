@@ -961,8 +961,8 @@
 #define TR_AFHDS3_RX_FREQ              TR("RX frek.", "RX frekvence")
 #define TR_AFHDS3_ONE_TO_ONE_TELEMETRY TR("Unicast/Tel.", "Unicast/Telemetrie")
 #define TR_AFHDS3_ONE_TO_MANY          "Multicast"
-#define TR_AFHDS3_ACTUAL_POWER         TR("Akt. výk", "Aktuální výkon")
-#define TR_AFHDS3_POWER_SOURCE         TR("Napáj zdr.", TR("Napáj zdr.", "Zdroj napájení"))
+#define TR_AFHDS3_ACTUAL_POWER         TR("Akt. výkon", "Aktuální výkon")
+#define TR_AFHDS3_POWER_SOURCE         TR("Napáj. zdr.", TR("Napáj. zdr.", "Zdroj napájení"))
 #define TR_ANTENNACONFIRM1             "Opravdu přepnout?"
 #if defined(PCBX12S)
   #define TR_ANTENNA_MODES             "Interní","Zeptat se","Dle modelu","Interní + Externí"

@@ -1109,7 +1109,7 @@
   #define TR_BL_INVALID_FIRMWARE       "Neplatný soubor s firmwarem"
 #elif LCD_W >= 212
   #define TR_BL_OR_PLUGIN_USB_CABLE    TR_BL_USB_PLUGIN_MASS_STORE
-  #define TR_BL_HOLD_ENTER_TO_START    "\012Držet [ENT] pro zahájení"
+  #define TR_BL_HOLD_ENTER_TO_START    "\012Držet [ENT] pro zahájení nahrávání"
   #define TR_BL_INVALID_FIRMWARE       "\011Neplatný firmware soubor!        "
   #define TR_BL_INVALID_EEPROM         "\011Neplatný EEPROM soubor!          "
 #else

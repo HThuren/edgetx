@@ -982,7 +982,7 @@
 #define TR_VALUE                        "Värde"
 #define TR_REPEAT                       "Upprepa"
 #define TR_ENABLE                       "Aktivera"
-#define TR_DISABLE                     "Disable"
+#define TR_DISABLE                      "Deaktivera"
 #define TR_TOPLCDTIMER                  "Översta LCD timer"
 #define TR_UNIT                         "Enhet"
 #define TR_TELEMETRY_NEWSENSOR          INDENT "Lägg till..." 

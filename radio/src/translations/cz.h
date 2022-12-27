@@ -953,7 +953,7 @@
 #define TR_VALUE                       "Hodnota"
 #define TR_REPEAT                      "Opakovat"
 #define TR_ENABLE                      "Povoleno"
-#define TR_DISABLE                     "Disable"
+#define TR_DISABLE                     "Zakázáno"
 #define TR_TOPLCDTIMER                 "Stopky horního LCD"
 #define TR_UNIT                        "Jednotky"
 #define TR_TELEMETRY_NEWSENSOR         INDENT "Přidat senzor ručně"
@@ -961,8 +961,8 @@
 #define TR_AFHDS3_RX_FREQ              TR("RX frek.", "RX frekvence")
 #define TR_AFHDS3_ONE_TO_ONE_TELEMETRY TR("Unicast/Tel.", "Unicast/Telemetrie")
 #define TR_AFHDS3_ONE_TO_MANY          "Multicast"
-#define TR_AFHDS3_ACTUAL_POWER         TR("Act. pow", "Aktuální výkon")
-#define TR_AFHDS3_POWER_SOURCE         TR("Power src.", TR("Power src.", "Power source"))
+#define TR_AFHDS3_ACTUAL_POWER         TR("Akt. výkon", "Aktuální výkon")
+#define TR_AFHDS3_POWER_SOURCE         TR("Napáj. zdr.", TR("Napáj. zdr.", "Zdroj napájení"))
 #define TR_ANTENNACONFIRM1             "Opravdu přepnout?"
 #if defined(PCBX12S)
   #define TR_ANTENNA_MODES             "Interní","Zeptat se","Dle modelu","Interní + Externí"
@@ -1092,58 +1092,58 @@
 #define TR_WIDGET_VALUE                "Hodnota"
 
 // Bootloader common
-#define TR_BL_USB_CONNECT_BOOT        CENTER "\011USB Connected"
-#define TR_BL_USB_CONNECTED           "USB Connected"
-#define TR_BL_USB_PLUGIN              "Or plug in a USB cable"
-#define TR_BL_USB_MASS_STORE          "for mass storage"
-#define TR_BL_USB_PLUGIN_MASS_STORE   "Or plug in a USB cable for mass storage"
-#define TR_BL_WRITE_FW                "Write Firmware"
+#define TR_BL_USB_CONNECT_BOOT        CENTER "\011USB připojeno"
+#define TR_BL_USB_CONNECTED           "USB připojeno"
+#define TR_BL_USB_PLUGIN              "nebo připojte USB kabel"
+#define TR_BL_USB_MASS_STORE          "pro použití úložiště"
+#define TR_BL_USB_PLUGIN_MASS_STORE   "nebo připojte USB kabel pro použití úložiště"
+#define TR_BL_WRITE_FW                "Nahrát firmware"
 #define TR_BL_FORK                    "Fork:"
-#define TR_BL_VERSION                 "Version:"
-#define TR_BL_RADIO                   "Radio:"
-#define TR_BL_EXIT                    "Exit"
-#define TR_BL_DIR_MISSING             " Directory is missing"
-#define TR_BL_DIR_EMPTY               " Directory is empty"
+#define TR_BL_VERSION                 "Verze:"
+#define TR_BL_RADIO                   "Rádio:"
+#define TR_BL_EXIT                    "Ukončit"
+#define TR_BL_DIR_MISSING             " Adresář chybí"
+#define TR_BL_DIR_EMPTY               " Adresář je prázdný"
 
 #if LCD_W >= 480
-  #define TR_BL_INVALID_FIRMWARE       "Not a valid firmware file"
+  #define TR_BL_INVALID_FIRMWARE       "Neplatný soubor s firmwarem"
 #elif LCD_W >= 212
   #define TR_BL_OR_PLUGIN_USB_CABLE    TR_BL_USB_PLUGIN_MASS_STORE
-  #define TR_BL_HOLD_ENTER_TO_START    "\012Hold [ENT] to start writing"
-  #define TR_BL_INVALID_FIRMWARE       "\011Not a valid firmware file!        "
-  #define TR_BL_INVALID_EEPROM         "\011Not a valid EEPROM file!          "
+  #define TR_BL_HOLD_ENTER_TO_START    "\012Držet [ENT] pro zahájení nahrávání"
+  #define TR_BL_INVALID_FIRMWARE       "\011Neplatný firmware soubor!        "
+  #define TR_BL_INVALID_EEPROM         "\011Neplatný EEPROM soubor!          "
 #else
   #define TR_BL_OR_PLUGIN_USB_CABLE    TR_BL_USB_PLUGIN
-  #define TR_BL_HOLD_ENTER_TO_START    "\006Hold [ENT] to start"
-  #define TR_BL_INVALID_FIRMWARE       "\004Not a valid firmware!        "
-  #define TR_BL_INVALID_EEPROM         "\004Not a valid EEPROM!          "
+  #define TR_BL_HOLD_ENTER_TO_START    "\006Držet [ENT] pro zahájení"
+  #define TR_BL_INVALID_FIRMWARE       "\004Neplatný firmware!        "
+  #define TR_BL_INVALID_EEPROM         "\004Neplatný EEPROM!          "
 #endif
 
 #if defined(PCBTARANIS)
    // Bootloader Taranis specific
-  #define TR_BL_RESTORE_EEPROM        "Restore EEPROM"
-  #define TR_BL_WRITING_FW            CENTER "\015Writing..."
-  #define TR_BL_WRITING_COMPL         CENTER "\007Writing complete"
+  #define TR_BL_RESTORE_EEPROM        "Obnovit EEPROM"
+  #define TR_BL_WRITING_FW            CENTER "\015Nahrávání..."
+  #define TR_BL_WRITING_COMPL         CENTER "\007Nahrávání dokončeno"
   #if defined(RADIO_COMMANDO8)
-    #define TR_BL_POWER_KEY           "Press the power button."
-    #define TR_BL_FLASH_EXIT          "Exit the flashing mode."
+    #define TR_BL_POWER_KEY           "Stiskněte tlačítko napájení."
+    #define TR_BL_FLASH_EXIT          "Ukončit režim nahrávání."
   #endif
 #elif defined(PCBHORUS)
    // Bootloader Horus specific
-  #define TR_BL_WRITING_FW            "Writing Firmware ..."
-  #define TR_BL_WRITING_COMPL         "Writing Completed"
-  #define TR_BL_SELECT_KEY            "[ENT] to select file"
-  #define TR_BL_FLASH_KEY             "Hold [ENT] long to flash"
-  #define TR_BL_EXIT_KEY              "[RTN] to exit"
+  #define TR_BL_WRITING_FW            "Nahrávání firmware ..."
+  #define TR_BL_WRITING_COMPL         "Nahrávání dokončeno"
+  #define TR_BL_SELECT_KEY            "[ENT] pro vybrání souboru"
+  #define TR_BL_FLASH_KEY             "Držet dlouze [ENT] pro nahrání"
+  #define TR_BL_EXIT_KEY              "[RTN] pro ukončení"
 #elif defined(PCBNV14)
    // Bootloader NV14 specific
-  #define TR_BL_WRITING_FW            "Writing Firmware ..."
-  #define TR_BL_WRITING_COMPL         "Writing Completed"
-  #define TR_BL_RF_USB_ACCESS         "RF USB access"
-  #define TR_BL_CURRENT_FW            "Current Firmware:"
-  #define TR_BL_SELECT_KEY            "[R TRIM] to select file"
-  #define TR_BL_FLASH_KEY             "Hold [R TRIM] long to flash"
-  #define TR_BL_EXIT_KEY              " [L TRIM] to exit"
+  #define TR_BL_WRITING_FW            "Nahrávání firmware ..."
+  #define TR_BL_WRITING_COMPL         "Nahrávání dokončeno"
+  #define TR_BL_RF_USB_ACCESS         "RF USB přístup"
+  #define TR_BL_CURRENT_FW            "Aktuální firmware:"
+  #define TR_BL_SELECT_KEY            "[R TRIM] pro vybrání souboru"
+  #define TR_BL_FLASH_KEY             "Držet dlouze [R TRIM] pro nahrání"
+  #define TR_BL_EXIT_KEY              " [L TRIM] pro ukončení"
 #endif
 
 // About screen

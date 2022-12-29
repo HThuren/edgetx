@@ -937,6 +937,7 @@
 #define TR_REPEAT                      "リピート"
 #define TR_ENABLE                      "有効"
 #define TR_DISABLE                     "無効"
+
 #define TR_TOPLCDTIMER                 "上部LCDタイマー"
 #define TR_UNIT                        "ユニット"
 #define TR_TELEMETRY_NEWSENSOR         INDENT "新規追加"

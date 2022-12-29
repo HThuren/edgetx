@@ -936,7 +936,8 @@
 #define TR_VALUE                       "値"
 #define TR_REPEAT                      "リピート"
 #define TR_ENABLE                      "有効"
-#define TR_DISABLE                     "Disable"
+#define TR_DISABLE                     "無効"
+
 #define TR_TOPLCDTIMER                 "上部LCDタイマー"
 #define TR_UNIT                        "ユニット"
 #define TR_TELEMETRY_NEWSENSOR         INDENT "新規追加"
@@ -1071,58 +1072,58 @@
 #define TR_WIDGET_VALUE                "値"
 
 // Bootloader common
-#define TR_BL_USB_CONNECT_BOOT        CENTER "\011USB Connected"
-#define TR_BL_USB_CONNECTED           "USB Connected"
-#define TR_BL_USB_PLUGIN              "Or plug in a USB cable"
-#define TR_BL_USB_MASS_STORE          "for mass storage"
-#define TR_BL_USB_PLUGIN_MASS_STORE   "Or plug in a USB cable for mass storage"
-#define TR_BL_WRITE_FW                "Write Firmware"
-#define TR_BL_FORK                    "Fork:"
-#define TR_BL_VERSION                 "Version:"
-#define TR_BL_RADIO                   "Radio:"
-#define TR_BL_EXIT                    "Exit"
-#define TR_BL_DIR_MISSING             " Directory is missing"
-#define TR_BL_DIR_EMPTY               " Directory is empty"
+#define TR_BL_USB_CONNECT_BOOT        CENTER "\011USBに接続"
+#define TR_BL_USB_CONNECTED           "USBに接続しました"
+#define TR_BL_USB_PLUGIN              "またはUSBケーブルを接続し"
+#define TR_BL_USB_MASS_STORE          "ストレージとして使用
+#define TR_BL_USB_PLUGIN_MASS_STORE   "またはUSBケーブルを接続しストレージとして使用"
+#define TR_BL_WRITE_FW                "ファーム書き込み"
+#define TR_BL_FORK                    "フォーク:"
+#define TR_BL_VERSION                 "バージョン:"
+#define TR_BL_RADIO                   "送信機:"
+#define TR_BL_EXIT                    "終了"
+#define TR_BL_DIR_MISSING             " ディレクトリが間違っています"
+#define TR_BL_DIR_EMPTY               " ディレクトリが空です"
 
 #if LCD_W >= 480
-  #define TR_BL_INVALID_FIRMWARE       "Not a valid firmware file"
+  #define TR_BL_INVALID_FIRMWARE       "有効なファームファイルではありません"
 #elif LCD_W >= 212
   #define TR_BL_OR_PLUGIN_USB_CABLE    TR_BL_USB_PLUGIN_MASS_STORE
-  #define TR_BL_HOLD_ENTER_TO_START    "\012Hold [ENT] to start writing"
-  #define TR_BL_INVALID_FIRMWARE       "\011Not a valid firmware file!        "
-  #define TR_BL_INVALID_EEPROM         "\011Not a valid EEPROM file!          "
+  #define TR_BL_HOLD_ENTER_TO_START    "\012[ENT]を押し続け書き込みスタート"
+  #define TR_BL_INVALID_FIRMWARE       "\011有効なファームファイルではありません!"
+  #define TR_BL_INVALID_EEPROM         "\011有効なEEPROMファイルではありません!"
 #else
   #define TR_BL_OR_PLUGIN_USB_CABLE    TR_BL_USB_PLUGIN
-  #define TR_BL_HOLD_ENTER_TO_START    "\006Hold [ENT] to start"
-  #define TR_BL_INVALID_FIRMWARE       "\004Not a valid firmware!        "
-  #define TR_BL_INVALID_EEPROM         "\004Not a valid EEPROM!          "
+  #define TR_BL_HOLD_ENTER_TO_START    "\006[ENT]を押し続けスタート"
+  #define TR_BL_INVALID_FIRMWARE       "\004有効なファームではありません!     "
+  #define TR_BL_INVALID_EEPROM         "\004有効なEEPROMではありません!       "
 #endif
 
 #if defined(PCBTARANIS)
    // Bootloader Taranis specific
-  #define TR_BL_RESTORE_EEPROM        "Restore EEPROM"
-  #define TR_BL_WRITING_FW            CENTER "\015Writing..."
-  #define TR_BL_WRITING_COMPL         CENTER "\007Writing complete"
+  #define TR_BL_RESTORE_EEPROM        "EEPROMのリストア"
+  #define TR_BL_WRITING_FW            CENTER "\015書き込み中..."
+  #define TR_BL_WRITING_COMPL         CENTER "\007書き込み完了"
   #if defined(RADIO_COMMANDO8)
-    #define TR_BL_POWER_KEY           "Press the power button."
-    #define TR_BL_FLASH_EXIT          "Exit the flashing mode."
+    #define TR_BL_POWER_KEY           "Powerボタンを押してください"
+    #define TR_BL_FLASH_EXIT          "フラッシュモード終了"
   #endif
 #elif defined(PCBHORUS)
    // Bootloader Horus specific
-  #define TR_BL_WRITING_FW            "Writing Firmware ..."
-  #define TR_BL_WRITING_COMPL         "Writing Completed"
-  #define TR_BL_SELECT_KEY            "[ENT] to select file"
-  #define TR_BL_FLASH_KEY             "Hold [ENT] long to flash"
-  #define TR_BL_EXIT_KEY              "[RTN] to exit"
+  #define TR_BL_WRITING_FW            "ファーム書き込み中..."
+  #define TR_BL_WRITING_COMPL         "書き込み完了"
+  #define TR_BL_SELECT_KEY            "[ENT] ファイル選択"
+  #define TR_BL_FLASH_KEY             "[ENT] 長押しでフラッシュ"
+  #define TR_BL_EXIT_KEY              "[RTN] 終了"
 #elif defined(PCBNV14)
    // Bootloader NV14 specific
-  #define TR_BL_WRITING_FW            "Writing Firmware ..."
-  #define TR_BL_WRITING_COMPL         "Writing Completed"
-  #define TR_BL_RF_USB_ACCESS         "RF USB access"
-  #define TR_BL_CURRENT_FW            "Current Firmware:"
-  #define TR_BL_SELECT_KEY            "[R TRIM] to select file"
-  #define TR_BL_FLASH_KEY             "Hold [R TRIM] long to flash"
-  #define TR_BL_EXIT_KEY              " [L TRIM] to exit"
+  #define TR_BL_WRITING_FW            "ファーム書き込み中..."
+  #define TR_BL_WRITING_COMPL         "書き込み完了"
+  #define TR_BL_RF_USB_ACCESS         "RF USBへアクセス"
+  #define TR_BL_CURRENT_FW            "現在のファーム:"
+  #define TR_BL_SELECT_KEY            "[R TRIM] ファイル選択"
+  #define TR_BL_FLASH_KEY             "[R TRIM] 長押しでフラッシュ"
+  #define TR_BL_EXIT_KEY              "[L TRIM] 終了"
 #endif
 
 // About screen

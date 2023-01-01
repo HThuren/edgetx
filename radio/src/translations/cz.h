@@ -1091,59 +1091,59 @@
 #define TR_WIDGET_TIMER                "Časovač"
 #define TR_WIDGET_VALUE                "Hodnota"
 
-// Bootloader common
-#define TR_BL_USB_CONNECT_BOOT        CENTER "\011USB připojeno"
-#define TR_BL_USB_CONNECTED           "USB připojeno"
-#define TR_BL_USB_PLUGIN              "nebo připojte USB kabel"
-#define TR_BL_USB_MASS_STORE          "pro použití úložiště"
-#define TR_BL_USB_PLUGIN_MASS_STORE   "nebo připojte USB kabel pro použití úložiště"
-#define TR_BL_WRITE_FW                "Nahrát firmware"
+// Bootloader common (Poznamka: nutne pouziti textu bez diakritiky - omezeni velikosti pameti bootloader!)
+#define TR_BL_USB_CONNECT_BOOT        CENTER "\011USB pripojeno"
+#define TR_BL_USB_CONNECTED           "USB pripojeno"
+#define TR_BL_USB_PLUGIN              "nebo pripojte USB kabel"
+#define TR_BL_USB_MASS_STORE          "pro pouziti uloziste"
+#define TR_BL_USB_PLUGIN_MASS_STORE   "nebo pripojte USB kabel pro pouziti uloziste"
+#define TR_BL_WRITE_FW                "Nahrat firmware"
 #define TR_BL_FORK                    "Fork:"
 #define TR_BL_VERSION                 "Verze:"
-#define TR_BL_RADIO                   "Rádio:"
-#define TR_BL_EXIT                    "Ukončit"
-#define TR_BL_DIR_MISSING             " Adresář chybí"
-#define TR_BL_DIR_EMPTY               " Adresář je prázdný"
+#define TR_BL_RADIO                   "Radio:"
+#define TR_BL_EXIT                    "Ukoncit"
+#define TR_BL_DIR_MISSING             " Adresar chybi"
+#define TR_BL_DIR_EMPTY               " Adresar je prazdny"
 
 #if LCD_W >= 480
-  #define TR_BL_INVALID_FIRMWARE       "Neplatný soubor s firmwarem"
+  #define TR_BL_INVALID_FIRMWARE       "Neplatny soubor s firmwarem"
 #elif LCD_W >= 212
   #define TR_BL_OR_PLUGIN_USB_CABLE    TR_BL_USB_PLUGIN_MASS_STORE
-  #define TR_BL_HOLD_ENTER_TO_START    "\012Držet [ENT] pro zahájení nahrávání"
-  #define TR_BL_INVALID_FIRMWARE       "\011Neplatný firmware soubor!        "
-  #define TR_BL_INVALID_EEPROM         "\011Neplatný EEPROM soubor!          "
+  #define TR_BL_HOLD_ENTER_TO_START    "\012Drzet [ENT] pro zahajeni nahravani"
+  #define TR_BL_INVALID_FIRMWARE       "\011Neplatny firmware soubor!        "
+  #define TR_BL_INVALID_EEPROM         "\011Neplatny EEPROM soubor!          "
 #else
   #define TR_BL_OR_PLUGIN_USB_CABLE    TR_BL_USB_PLUGIN
-  #define TR_BL_HOLD_ENTER_TO_START    "\006Držet [ENT] pro zahájení"
-  #define TR_BL_INVALID_FIRMWARE       "\004Neplatný firmware!        "
-  #define TR_BL_INVALID_EEPROM         "\004Neplatný EEPROM!          "
+  #define TR_BL_HOLD_ENTER_TO_START    "\006Drzet [ENT] pro zahajeni"
+  #define TR_BL_INVALID_FIRMWARE       "\004Neplatny firmware!        "
+  #define TR_BL_INVALID_EEPROM         "\004Neplatny EEPROM!          "
 #endif
 
 #if defined(PCBTARANIS)
    // Bootloader Taranis specific
   #define TR_BL_RESTORE_EEPROM        "Obnovit EEPROM"
-  #define TR_BL_WRITING_FW            CENTER "\015Nahrávání..."
-  #define TR_BL_WRITING_COMPL         CENTER "\007Nahrávání dokončeno"
+  #define TR_BL_WRITING_FW            CENTER "\015Nahravani..."
+  #define TR_BL_WRITING_COMPL         CENTER "\007Nahravani dokonceno"
   #if defined(RADIO_COMMANDO8)
-    #define TR_BL_POWER_KEY           "Stiskněte tlačítko napájení."
-    #define TR_BL_FLASH_EXIT          "Ukončit režim nahrávání."
+    #define TR_BL_POWER_KEY           "Stisknete tlacitko napajeni."
+    #define TR_BL_FLASH_EXIT          "Ukoncit rezim nahravani."
   #endif
 #elif defined(PCBHORUS)
    // Bootloader Horus specific
-  #define TR_BL_WRITING_FW            "Nahrávání firmware ..."
-  #define TR_BL_WRITING_COMPL         "Nahrávání dokončeno"
-  #define TR_BL_SELECT_KEY            "[ENT] pro vybrání souboru"
-  #define TR_BL_FLASH_KEY             "Držet dlouze [ENT] pro nahrání"
-  #define TR_BL_EXIT_KEY              "[RTN] pro ukončení"
+  #define TR_BL_WRITING_FW            "Nahravani firmware ..."
+  #define TR_BL_WRITING_COMPL         "Nahravani dokonceno"
+  #define TR_BL_SELECT_KEY            "[ENT] pro vybrani souboru"
+  #define TR_BL_FLASH_KEY             "Drzet dlouze [ENT] pro nahrani"
+  #define TR_BL_EXIT_KEY              "[RTN] pro ukonceni"
 #elif defined(PCBNV14)
    // Bootloader NV14 specific
-  #define TR_BL_WRITING_FW            "Nahrávání firmware ..."
-  #define TR_BL_WRITING_COMPL         "Nahrávání dokončeno"
-  #define TR_BL_RF_USB_ACCESS         "RF USB přístup"
-  #define TR_BL_CURRENT_FW            "Aktuální firmware:"
-  #define TR_BL_SELECT_KEY            "[R TRIM] pro vybrání souboru"
-  #define TR_BL_FLASH_KEY             "Držet dlouze [R TRIM] pro nahrání"
-  #define TR_BL_EXIT_KEY              " [L TRIM] pro ukončení"
+  #define TR_BL_WRITING_FW            "Nahravani firmware ..."
+  #define TR_BL_WRITING_COMPL         "Nahravani dokonceno"
+  #define TR_BL_RF_USB_ACCESS         "RF USB pristup"
+  #define TR_BL_CURRENT_FW            "Aktualni firmware:"
+  #define TR_BL_SELECT_KEY            "[R TRIM] pro vybrani souboru"
+  #define TR_BL_FLASH_KEY             "Drzet dlouze [R TRIM] pro nahrani"
+  #define TR_BL_EXIT_KEY              " [L TRIM] pro ukonceni"
 #endif
 
 // About screen

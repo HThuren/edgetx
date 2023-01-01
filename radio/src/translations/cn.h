@@ -936,7 +936,7 @@
 #define TR_VALUE                       "数值"
 #define TR_REPEAT                      "循环"
 #define TR_ENABLE                      "启用"
-#define TR_DISABLE                     "Disable"
+#define TR_DISABLE                     "禁用"
 #define TR_TOPLCDTIMER                 "Top LCD Timer"
 #define TR_UNIT                        "单位"
 #define TR_TELEMETRY_NEWSENSOR         INDENT "添加新传感器..."
@@ -1071,58 +1071,58 @@
 #define TR_WIDGET_VALUE                "数值"
 
 // Bootloader common
-#define TR_BL_USB_CONNECT_BOOT        CENTER "\011USB Connected"
-#define TR_BL_USB_CONNECTED           "USB Connected"
-#define TR_BL_USB_PLUGIN              "Or plug in a USB cable"
-#define TR_BL_USB_MASS_STORE          "for mass storage"
-#define TR_BL_USB_PLUGIN_MASS_STORE   "Or plug in a USB cable for mass storage"
-#define TR_BL_WRITE_FW                "Write Firmware"
-#define TR_BL_FORK                    "Fork:"
-#define TR_BL_VERSION                 "Version:"
-#define TR_BL_RADIO                   "Radio:"
-#define TR_BL_EXIT                    "Exit"
-#define TR_BL_DIR_MISSING             " Directory is missing"
-#define TR_BL_DIR_EMPTY               " Directory is empty"
+#define TR_BL_USB_CONNECT_BOOT CENTER   "\011USB已连接"
+#define TR_BL_USB_CONNECTED             "USB已连接"
+#define TR_BL_USB_PLUGIN                "或插入USB电缆"
+#define TR_BL_USB_MASS_STORE            "作为移动存储"
+#define TR_BL_USB_PLUGIN_MASS_STORE     "或插入USB电缆作为移动存储"
+#define TR_BL_WRITE_FW                  "写入固件"
+#define TR_BL_FORK                      "代码分支:"
+#define TR_BL_VERSION                   "固件版本:"
+#define TR_BL_RADIO                     "遥控型号:"
+#define TR_BL_EXIT                      "退出"
+#define TR_BL_DIR_MISSING               "文件夹错误"
+#define TR_BL_DIR_EMPTY                 "空文件夹"
 
 #if LCD_W >= 480
-  #define TR_BL_INVALID_FIRMWARE       "Not a valid firmware file"
+#define TR_BL_INVALID_FIRMWARE          "无效的固件文件"
 #elif LCD_W >= 212
-  #define TR_BL_OR_PLUGIN_USB_CABLE    TR_BL_USB_PLUGIN_MASS_STORE
-  #define TR_BL_HOLD_ENTER_TO_START    "\012Hold [ENT] to start writing"
-  #define TR_BL_INVALID_FIRMWARE       "\011Not a valid firmware file!        "
-  #define TR_BL_INVALID_EEPROM         "\011Not a valid EEPROM file!          "
+#define TR_BL_OR_PLUGIN_USB_CABLE TR_BL_USB_PLUGIN_MASS_STORE
+#define TR_BL_HOLD_ENTER_TO_START       "\012长按 [ENT] 写入固件"
+#define TR_BL_INVALID_FIRMWARE          "\011无效的固件文件! "
+#define TR_BL_INVALID_EEPROM            "\011无效的EEPROM文件! "
 #else
-  #define TR_BL_OR_PLUGIN_USB_CABLE    TR_BL_USB_PLUGIN
-  #define TR_BL_HOLD_ENTER_TO_START    "\006Hold [ENT] to start"
-  #define TR_BL_INVALID_FIRMWARE       "\004Not a valid firmware!        "
-  #define TR_BL_INVALID_EEPROM         "\004Not a valid EEPROM!          "
+#define TR_BL_OR_PLUGIN_USB_CABLE TR_BL_USB_PLUGIN
+#define TR_BL_HOLD_ENTER_TO_START       "\006长按 [ENT] 开始"
+#define TR_BL_INVALID_FIRMWARE          "\004无效的固件文件! "
+#define TR_BL_INVALID_EEPROM            "\004无效的EEPROM文件! "
 #endif
 
 #if defined(PCBTARANIS)
-   // Bootloader Taranis specific
-  #define TR_BL_RESTORE_EEPROM        "Restore EEPROM"
-  #define TR_BL_WRITING_FW            CENTER "\015Writing..."
-  #define TR_BL_WRITING_COMPL         CENTER "\007Writing complete"
+  // Bootloader Taranis specific
+  #define TR_BL_RESTORE_EEPROM          "恢复EEPROM"
+  #define TR_BL_WRITING_FW CENTER       "\015正在写入固件..."
+  #define TR_BL_WRITING_COMPL CENTER    "\007固件写入成功"
   #if defined(RADIO_COMMANDO8)
-    #define TR_BL_POWER_KEY           "Press the power button."
-    #define TR_BL_FLASH_EXIT          "Exit the flashing mode."
+    #define TR_BL_POWER_KEY             "按下电源键."
+    #define TR_BL_FLASH_EXIT            "退出刷机模式."
   #endif
 #elif defined(PCBHORUS)
-   // Bootloader Horus specific
-  #define TR_BL_WRITING_FW            "Writing Firmware ..."
-  #define TR_BL_WRITING_COMPL         "Writing Completed"
-  #define TR_BL_SELECT_KEY            "[ENT] to select file"
-  #define TR_BL_FLASH_KEY             "Hold [ENT] long to flash"
-  #define TR_BL_EXIT_KEY              "[RTN] to exit"
+  // Bootloader Horus specific
+  #define TR_BL_WRITING_FW              "正在写入固件 ..."
+  #define TR_BL_WRITING_COMPL           "固件写入成功"
+  #define TR_BL_SELECT_KEY              "按 [ENT] 选择文件"
+  #define TR_BL_FLASH_KEY               "长按 [ENT] 写入固件"
+  #define TR_BL_EXIT_KEY                "按 [RTN] 退出"
 #elif defined(PCBNV14)
-   // Bootloader NV14 specific
-  #define TR_BL_WRITING_FW            "Writing Firmware ..."
-  #define TR_BL_WRITING_COMPL         "Writing Completed"
-  #define TR_BL_RF_USB_ACCESS         "RF USB access"
-  #define TR_BL_CURRENT_FW            "Current Firmware:"
-  #define TR_BL_SELECT_KEY            "[R TRIM] to select file"
-  #define TR_BL_FLASH_KEY             "Hold [R TRIM] long to flash"
-  #define TR_BL_EXIT_KEY              " [L TRIM] to exit"
+  // Bootloader NV14 specific
+  #define TR_BL_WRITING_FW              "写入固件 ..."
+  #define TR_BL_WRITING_COMPL           "写入成功"
+  #define TR_BL_RF_USB_ACCESS           "访问射频USB"
+  #define TR_BL_CURRENT_FW              "当前固件:"
+  #define TR_BL_SELECT_KEY              "右 [TRIM] 选择文件"
+  #define TR_BL_FLASH_KEY               "长按右 [TRIM] 写入固件"
+  #define TR_BL_EXIT_KEY                "按左 [TRIM] 退出"
 #endif
 
 // About screen

@@ -932,7 +932,7 @@
 #define TR_VALUE               "Wartość"
 #define TR_REPEAT              "Powtórz"
 #define TR_ENABLE              "Włącz"
-#define TR_DISABLE                     "Wyłączone"
+#define TR_DISABLE             "Wylaczone"
 #define TR_TOPLCDTIMER         "Top LCD Timer"
 #define TR_UNIT                "Jednostka"
 #define TR_TELEMETRY_NEWSENSOR INDENT "Dodaj nowy czujnik..."
@@ -1072,58 +1072,58 @@
 #define TR_WIDGET_VALUE                "Wartość"
 
 // Bootloader common
-#define TR_BL_USB_CONNECT_BOOT        CENTER "\011USB połączone"
-#define TR_BL_USB_CONNECTED           "USB połączone"
-#define TR_BL_USB_PLUGIN              "lub podłącz kabel USB"
+#define TR_BL_USB_CONNECT_BOOT        CENTER "\011USB polaczone"
+#define TR_BL_USB_CONNECTED           "USB polaczone"
+#define TR_BL_USB_PLUGIN              "lub podlacz kabel USB"
 #define TR_BL_USB_MASS_STORE          "dla trybu danych"
-#define TR_BL_USB_PLUGIN_MASS_STORE   "lub podłącz kabel USB dla trybu danych"
+#define TR_BL_USB_PLUGIN_MASS_STORE   "lub podlacz kabel USB dla trybu danych"
 #define TR_BL_WRITE_FW                "Zapis firmware"
 #define TR_BL_FORK                    "Fork:"
 #define TR_BL_VERSION                 "Wersja:"
 #define TR_BL_RADIO                   "Radio:"
-#define TR_BL_EXIT                    "Wyjdź"
+#define TR_BL_EXIT                    "Wyjdz"
 #define TR_BL_DIR_MISSING             " Brak katalogu"
 #define TR_BL_DIR_EMPTY               " Katalog jest pusty"
 
 #if LCD_W >= 480
-  #define TR_BL_INVALID_FIRMWARE       "Nieprawidłowy plik firmware"
+  #define TR_BL_INVALID_FIRMWARE       "Nieprawidlowy plik firmware"
 #elif LCD_W >= 212
   #define TR_BL_OR_PLUGIN_USB_CABLE    TR_BL_USB_PLUGIN_MASS_STORE
-  #define TR_BL_HOLD_ENTER_TO_START    "\012Przytrzymaj [ENT] by zacząć zapis"
-  #define TR_BL_INVALID_FIRMWARE       "\011Nieprawidłowy plik firmware!      "
-  #define TR_BL_INVALID_EEPROM         "\011Nieprawidłowy plik EEPROM!        "
+  #define TR_BL_HOLD_ENTER_TO_START    "\012Przytrzymaj [ENT] by zaczac zapis"
+  #define TR_BL_INVALID_FIRMWARE       "\011Nieprawidlowy plik firmware!      "
+  #define TR_BL_INVALID_EEPROM         "\011Nieprawidlowy plik EEPROM!        "
 #else
   #define TR_BL_OR_PLUGIN_USB_CABLE    TR_BL_USB_PLUGIN
-  #define TR_BL_HOLD_ENTER_TO_START    "\006Przytrzymaj [ENT] by zacząć"
-  #define TR_BL_INVALID_FIRMWARE       "\004011Nieprawidłowy firmware!   "
-  #define TR_BL_INVALID_EEPROM         "\004011Nieprawidłowy EEPROM!     "
+  #define TR_BL_HOLD_ENTER_TO_START    "\006Przytrzymaj [ENT] by zaczac"
+  #define TR_BL_INVALID_FIRMWARE       "\004011Nieprawidlowy firmware!   "
+  #define TR_BL_INVALID_EEPROM         "\004011Nieprawidlowy EEPROM!     "
 #endif
 
 #if defined(PCBTARANIS)
    // Bootloader Taranis specific
-  #define TR_BL_RESTORE_EEPROM        "Przywróć EEPROM"
+  #define TR_BL_RESTORE_EEPROM        "Przywroc EEPROM"
   #define TR_BL_WRITING_FW            CENTER "\015Zapis..."
-  #define TR_BL_WRITING_COMPL         CENTER "\007Zapis ukończony"
+  #define TR_BL_WRITING_COMPL         CENTER "\007Zapis ukonczony"
   #if defined(RADIO_COMMANDO8)
-    #define TR_BL_POWER_KEY           "Naciśnij przycisk Power"
-    #define TR_BL_FLASH_EXIT          "Wyjdź z trybu flashowania"
+    #define TR_BL_POWER_KEY           "Nacisnij przycisk Power"
+    #define TR_BL_FLASH_EXIT          "Wyjdz z trybu flashowania"
   #endif
 #elif defined(PCBHORUS)
    // Bootloader Horus specific
   #define TR_BL_WRITING_FW            "Zapis firmware ..."
-  #define TR_BL_WRITING_COMPL         "Zapis ukończony"
-  #define TR_BL_SELECT_KEY            "[ENT] aby wybrać plik"
-  #define TR_BL_FLASH_KEY             "Przytrzymaj [ENT] aby flashować"
-  #define TR_BL_EXIT_KEY              "[RTN] aby wyjść"
+  #define TR_BL_WRITING_COMPL         "Zapis ukonczony"
+  #define TR_BL_SELECT_KEY            "[ENT] aby wybrac plik"
+  #define TR_BL_FLASH_KEY             "Przytrzymaj [ENT] aby flashowac"
+  #define TR_BL_EXIT_KEY              "[RTN] aby wyjsc"
 #elif defined(PCBNV14)
    // Bootloader NV14 specific
   #define TR_BL_WRITING_FW            "Zapis firmware ..."
-  #define TR_BL_WRITING_COMPL         "Zapis ukończony"
-  #define TR_BL_RF_USB_ACCESS         "Dostęp RF USB"
+  #define TR_BL_WRITING_COMPL         "Zapis ukonczony"
+  #define TR_BL_RF_USB_ACCESS         "Dostep RF USB"
   #define TR_BL_CURRENT_FW            "Obecny firmware:"
-  #define TR_BL_SELECT_KEY            "[R TRIM] aby wybrać plik"
-  #define TR_BL_FLASH_KEY             "Przytrzymaj [R TRIM] aby flashować"
-  #define TR_BL_EXIT_KEY              " [L TRIM] aby wyjść"
+  #define TR_BL_SELECT_KEY            "[R TRIM] aby wybrac plik"
+  #define TR_BL_FLASH_KEY             "Przytrzymaj [R TRIM] aby flashowac"
+  #define TR_BL_EXIT_KEY              " [L TRIM] aby wyjsc"
 #endif
 
 // About screen
